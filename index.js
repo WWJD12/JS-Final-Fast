@@ -1,1 +1,0 @@
-const movieWrapper = document.querySelector('.movies');
