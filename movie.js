@@ -25,11 +25,9 @@ function userHTML(movie) {
       <div class="movie__title">
         ${movie.Title}
       </div>
-      <p class="movie__poster">
-       <img ${movie.Poster}>
-      </p>
-      <p class="movie__year">
-        ${movie.Year}
+      <img class="movie__poster" src="${movie.Poster}" alt="${movie.Title}>
+       <p class="movie__year">
+         ${movie.Year}
       </p>
     </div>
   </div>`
