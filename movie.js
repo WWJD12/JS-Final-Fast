@@ -2,8 +2,14 @@
 // "https://www.omdbapi.com/?i=tt3896198&apikey=68956156&S=fast"
 const movieListEl = document.querySelector(".movie-list");
 
-async function main() {
-    const response = await fetch(`https://www.omdbapi.com/?s=fast&apikey=68956156`);
+async function searchMovies() {
+    const searchValue = document.getElementById("searchInput").value;
+
+    if (!searchMovies) {
+        alert("Please enter a movie name");
+        return;
+    }
+     const response = await fetch(`https://www.omdbapi.com/?s=${searchValue}&apikey=68956156`);
     const moviesData = await response.json();
 
     if (moviesData.Response === "False") {
@@ -25,11 +31,10 @@ function userHTML(movie) {
       <div class="movie__title">
         ${movie.Title}
       </div>
-      <img class="movie__poster" src="${movie.Poster}" alt="${movie.Title}>
+      <img class="movie__poster" src="${movie.Poster}" alt="${movie.Title}">
        <p class="movie__year">
          ${movie.Year}
       </p>
     </div>
   </div>`
 }
-main()
